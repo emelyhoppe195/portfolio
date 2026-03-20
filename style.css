@@ -1000,7 +1000,6 @@ img {
     line-height: 1.1 !important;
   }
 
-  /* Hauptseite: EMELY HOPPE weiß */
   .hero-name {
     color: #fff !important;
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
@@ -1026,13 +1025,11 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* "Projekte" gleiche Größe */
   .dropdown .dropbtn {
     font-size: 0.95rem !important;
     font-weight: normal !important;
   }
 
-  /* Dropdown fix */
   .dropdown-content {
     position: static !important;
     display: none !important;
@@ -1123,7 +1120,6 @@ img {
     max-width: 100% !important;
   }
 
-  /* Kontakt / About */
   .about-image,
   .pair-img {
     object-fit: contain !important;
@@ -1147,7 +1143,6 @@ img {
     line-height: 1.2 !important;
   }
 
-  /* Text überlappt keine Kacheln */
   .feature-tile-text {
     overflow: visible !important;
     position: relative !important;
@@ -1171,7 +1166,6 @@ img {
     margin-bottom: 2rem !important;
   }
 
-  /* Text über Bilder */
   .image-pair-text,
   .creative-text {
     margin-top: 1rem !important;
@@ -1203,4 +1197,5 @@ img {
   section {
     margin-bottom: 3rem !important;
   }
+
 }
