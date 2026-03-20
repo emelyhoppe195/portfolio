@@ -948,7 +948,7 @@ img {
 }
 
 /* ===================================== */
-/* 🔥 MASTER MOBILE FIX 3 – ALLE SEITEN */
+/* 🔥 MOBILE FIX VOLLSTÄNDIG FÜR ALLE SEITEN */
 /* ===================================== */
 @media (max-width: 768px) {
 
@@ -959,51 +959,43 @@ img {
   /* ================= HERO / HEADER ================= */
   .hero,
   .hero-header {
-    position: relative !important;
+    height: auto !important;
     min-height: 85vh !important;
     max-height: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 2rem 5% !important;
+    position: relative;
   }
 
-  .hero-header img,
+  .hero::before,
   .hero-header-image {
-    position: absolute !important;
-    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    z-index: 0 !important;
   }
 
   .hero-header-text,
   .hero-content {
     position: relative !important;
-    z-index: 2 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    width: 100% !important;
+    padding: 2rem 5% !important;
+    top: 0 !important;
   }
 
-  /* Header Überschriften */
-  .hero-title,
-  .hero-title2,
-  .hero-name {
-    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
-    line-height: 1.1 !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  /* Index: EMELY HOPPE weiß */
+  /* Hauptüberschrift Startseite "EMELY HOPPE" weiß */
   .hero-name {
     color: #fff !important;
+    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Willkommen / andere Texte sichtbar */
+  .hero-greeting {
+    overflow: visible !important;
+    color: var(--whiterock-light-01) !important;
   }
 
   /* ================= NAVIGATION ================= */
@@ -1011,7 +1003,6 @@ img {
     gap: 0.8rem !important;
     padding: 1rem !important;
     flex-wrap: wrap !important;
-    position: relative !important;
   }
 
   .main-nav a,
@@ -1020,121 +1011,69 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  .dropdown .dropbtn {
-    font-size: 0.95rem !important;
-    font-weight: normal !important;
-  }
-
-  /* Dropdown zuverlässig anklickbar */
-  .dropdown {
-    position: relative !important;
-  }
-
+  /* Dropdown fix */
   .dropdown-content {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
+    position: static !important;
     display: none !important;
     flex-direction: column !important;
-    background: white !important;
-    z-index: 10 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
+  .dropdown:active .dropdown-content,
   .dropdown:focus-within .dropdown-content,
   .dropdown:hover .dropdown-content {
     display: flex !important;
   }
 
-  /* ================= TEXT / LAYOUT ================= */
-  p, h1, h2, h3 {
-    line-height: 1.4 !important;
-    word-break: break-word !important;
-  }
-
-  section, div {
-    overflow: visible !important;
-  }
-
+  /* ================= SEITENHEADER FIX ================= */
+  .hero-header,
   .intro-content,
   .recipe-features-content,
-  .image-pair-content,
-  .feature-tile-content,
-  .about-split,
   .project-content,
-  .skills-grid,
-  .tech-columns {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2rem !important;
+  .image-pair-content {
     width: 100% !important;
     margin: 0 !important;
-    height: auto !important;
+    padding: 0 !important;
+    left: 0 !important;
   }
 
-  .project-text,
-  .image-pair-text,
-  .recipe-text,
-  .intro-text,
-  .about-text,
-  .feature-tile-text {
+  .intro-image,
+  .recipe-image,
+  .image-pair-block,
+  .about-image-block,
+  .project-image {
+    width: 100% !important;
     max-width: 100% !important;
-    padding: 1rem 5% !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 2 !important;
+    padding: 2rem 5% !important;
   }
 
-  /* ================= BILDER ================= */
-  img,
-  .project-image img,
   .intro-image img,
   .recipe-image img,
-  .feature-tile-image img,
   .pair-img,
+  .project-image img,
   .about-image,
-  .creative-img,
-  .slider img {
+  .feature-tile-image img {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
     margin-bottom: 1.5rem !important;
   }
 
-  /* Bilder untereinander (Poster, Creative Coding) */
-  .image-pair-block,
-  .project-image,
-  .creative-coding-block {
-    flex-direction: column !important;
-  }
-
-  /* Kontakt / About */
-  .about-image,
-  .pair-img {
-    object-fit: contain !important;
-    position: relative !important;
-    z-index: 1 !important;
-  }
-
-  footer {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  /* ================= ABSTÄNDE ZWISCHEN KOMBINIEREN ================= */
-  .hero-header + section,
-  .about-text + .about-image,
-  .project-text + .project-image,
-  .image-pair-text + .pair-img,
-  .creative-text + .creative-img {
-    margin-top: 2rem !important;
-  }
-
-  /* ================= KACHELN ================= */
-  .feature-tile {
-    height: auto !important;
-    padding: 2rem !important;
+  /* ================= TEXT / KACHELN ================= */
+  .project-text,
+  .intro-text,
+  .recipe-text,
+  .image-pair-text,
+  .about-text,
+  .feature-tile-text {
+    max-width: 100% !important;
+    padding: 1rem 6% !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    word-break: break-word !important;
+    line-height: 1.4 !important;
   }
 
   .feature-tile-text h3 {
@@ -1142,11 +1081,29 @@ img {
     line-height: 1.2 !important;
   }
 
-  /* Text überlappt keine Kacheln */
-  .feature-tile-text {
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 2 !important;
+  .feature-tile {
+    height: auto !important;
+    padding: 2rem !important;
+  }
+
+  /* ================= POSTER & CREATIVE CODING ================= */
+  .image-pair-block,
+  .creative-coding-block {
+    flex-direction: column !important;
+  }
+
+  .pair-img,
+  .creative-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Text über Bilder nicht mehr überlappend */
+  .image-pair-text,
+  .creative-text {
+    margin-top: 1rem !important;
   }
 
   /* ================= SLIDER ================= */
@@ -1156,18 +1113,11 @@ img {
     gap: 2rem !important;
   }
 
-  .slider-button {
-    display: flex !important;
-    opacity: 1 !important;
-    z-index: 5 !important;
-  }
-
-  .slider-button.prev {
-    left: 10px !important;
-  }
-
-  .slider-button.next {
-    right: 10px !important;
+  .slider-arrow {
+    display: inline-flex !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.5rem !important;
   }
 
   /* ================= SPACING ================= */
