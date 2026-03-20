@@ -1011,22 +1011,17 @@ img {
 
   /* ================= ÜBERSCHRIFTEN ================= */
   .hero-title,
-  .hero-title2 {
+  .hero-title2,
+  .hero-name {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
     text-align: center !important;
     margin-bottom: 0.5rem !important;
-    color: var(--contessa-dark-02) !important;
   }
 
-  /* Index: EMELY HOPPE weiß */
-  .hero-name {
-    color: #fff !important;
-    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    margin-bottom: 0.5rem !important;
-  }
+  .hero-title,
+  .hero-title2 { color: var(--contessa-dark-02) !important; }
+  .hero-name { color: #fff !important; }
 
   .hero-greeting {
     overflow: visible !important;
@@ -1055,11 +1050,7 @@ img {
     font-weight: normal !important;
   }
 
-  /* Dropdown zuverlässig anklickbar */
-  .dropdown {
-    position: relative !important;
-  }
-
+  .dropdown { position: relative !important; }
   .dropdown-content {
     position: absolute !important;
     top: 100% !important;
@@ -1071,11 +1062,8 @@ img {
     z-index: 10 !important;
     text-align: center !important;
   }
-
   .dropdown:focus-within .dropdown-content,
-  .dropdown:hover .dropdown-content {
-    display: flex !important;
-  }
+  .dropdown:hover .dropdown-content { display: flex !important; }
 
   /* ================= TEXT / LAYOUT ================= */
   p, h1, h2, h3 {
@@ -1106,6 +1094,7 @@ img {
     width: 100% !important;
     margin: 0 !important;
     height: auto !important;
+    align-items: center !important;
   }
 
   .project-text,
@@ -1121,10 +1110,10 @@ img {
     position: relative !important;
     z-index: 2 !important;
     line-height: 1.4 !important;
+    text-align: center !important;
   }
 
   /* ================= BILDER ================= */
-  /* Alle Bilder responsive */
   img,
   .project-image img,
   .intro-image img,
@@ -1140,14 +1129,12 @@ img {
     margin-bottom: 1.5rem !important;
   }
 
-  /* Poster & Creative Coding untereinander */
   .image-pair-block,
   .project-image,
   .creative-coding-block {
     flex-direction: column !important;
   }
 
-  /* Kontakt / About */
   .about-image,
   .pair-img {
     object-fit: contain !important;
@@ -1155,12 +1142,9 @@ img {
     z-index: 1 !important;
   }
 
-  footer {
-    position: relative !important;
-    z-index: 5 !important;
-  }
+  footer { position: relative !important; z-index: 5 !important; }
 
-  /* ================= ABSTÄNDE ZWISCHEN KOMPONENTEN ================= */
+  /* ================= ABSTÄNDE ================= */
   .hero-header + section,
   .about-text + .about-image,
   .project-text + .project-image,
@@ -1200,17 +1184,10 @@ img {
     z-index: 5 !important;
   }
 
-  .slider-button.prev {
-    left: 10px !important;
-  }
-
-  .slider-button.next {
-    right: 10px !important;
-  }
+  .slider-button.prev { left: 10px !important; }
+  .slider-button.next { right: 10px !important; }
 
   /* ================= SPACING ================= */
-  section {
-    margin-bottom: 3rem !important;
-  }
+  section { margin-bottom: 3rem !important; }
 
 }
