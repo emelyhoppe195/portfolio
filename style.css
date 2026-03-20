@@ -1052,75 +1052,53 @@ img {
 }
 
 /* ========================= */
-/* 🔥 MOBILE FIX (WICHTIG)  */
+/* ✅ CLEAN MOBILE VERSION  */
 /* ========================= */
 @media (max-width: 768px) {
 
-  /* ❌ Killt horizontales Scrollen */
-  body {
+  html, body {
     overflow-x: hidden;
   }
 
-  /* ❌ Entfernt alle 100vw Tricks */
+  /* 🔥 ALLE Sections normalisieren */
+  section,
+  .hero,
+  .intro-section,
+  .recipe-features-section,
+  .project-block,
+  .image-pair-section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 🔥 Entfernt ALLE 100vw Tricks */
+  *[style*="100vw"],
   .hero-header,
   .intro-content,
   .recipe-features-content,
-  .image-pair-content,
-  .project-block {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-
-  /* ❌ Entfernt ALLE crazy widths */
-  .project-image,
-  .about-image,
-  .pair-img,
-  .intro-image img,
-  .recipe-image img {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* ❌ Fix für abgeschnittene Bilder */
-  .project-image img,
-  .intro-image img,
-  .recipe-image img,
-  .feature-tile-image img,
-  .pair-img,
-  .about-image {
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
-  /* ❌ Entfernt negative margins */
-  .hero-text,
-  .hero-title2 {
-    margin: 0 !important;
-  }
-
-  /* ✅ Zentriert Hero sauber */
-  .hero-content {
-    justify-content: center !important;
-    text-align: center;
-  }
-
-  /* ❌ Grid → untereinander */
-  .intro-content,
-  .skills-grid,
-  .project-content,
-  .about-split,
-  .feature-tile-content,
-  .tech-columns,
   .image-pair-content {
+    width: 100% !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* 🔥 ALLES untereinander */
+  .intro-content,
+  .recipe-features-content,
+  .project-content,
+  .image-pair-content,
+  .feature-tile-content,
+  .about-split,
+  .skills-grid,
+  .tech-columns {
     display: flex !important;
     flex-direction: column !important;
     gap: 2rem;
   }
 
-  /* ❌ Padding entschärfen */
+  /* 🔥 Padding vereinheitlichen */
   .intro-text,
   .intro-image,
   .recipe-text,
@@ -1129,34 +1107,86 @@ img {
   .project-image,
   .image-pair-text,
   .image-pair-block,
-  .about-text {
-    padding: 2rem 5% !important;
+  .about-text,
+  .feature-tile,
+  .tech-skills {
+    padding: 2rem 6% !important;
   }
 
-  /* ❌ Slider fix */
-  .slider-container {
-    flex-direction: column;
+  /* 🔥 Bilder IMMER korrekt */
+  img,
+  .project-image img,
+  .intro-image img,
+  .recipe-image img,
+  .feature-tile-image img,
+  .pair-img,
+  .about-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* 🔥 Entfernt alle kaputten Größen */
+  .project-image,
+  .about-image,
+  .pair-img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 🔥 Hero fix */
+  .hero {
     height: auto;
+    min-height: 500px;
   }
 
-  /* ❌ Navigation kompakter */
+  .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin: 0 !important;
+    padding: 2rem;
+  }
+
+  .hero-title,
+  .hero-name {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  /* 🔥 Navigation */
   .main-nav {
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
     padding: 1rem;
   }
 
   .main-nav a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
-  /* ❌ Subtitle fix */
+  /* 🔥 Slider fix */
+  .slider-container {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  /* 🔥 Subtitle fix */
   .project-subtitle {
     position: static !important;
     text-align: center;
   }
 
-  /* ❌ About Bild killt Layout → fix */
-  .about-image {
-    width: 100% !important;
+  /* 🔥 Entfernt feste Höhen */
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .slider-container {
+    height: auto !important;
+    min-height: unset !important;
   }
+
 }
