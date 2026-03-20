@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emely Hoppe - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+</head>
+<body>
+
+ <header class="site-header">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">Über mich</a>
+
+    <div class="dropdown">
+      <span class="dropbtn">Projekte</span>
+      <div class="dropdown-content">
+        <a href="webdesign.html">Webdesign</a>
+        <a href="print-poster.html">Print & Poster</a>
+        <a href="creative-coding.html">Creative Coding</a>
+      </div>
+    </div>
+
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-greeting">Hey, ich bin</p>
+      <h1 class="hero-name">
+        EMELY HOPPE
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h3 class="intro-title">Willkommen!</h3>
+      <p>Ich bin angehende Designerin aus Flensburg mit Fokus auf Web- und Printdesign. Schau dich gerne um! :) <br> </p>
+      <p><a href="aboutme.html">Mehr zu mir →</a></p>
+    </div>
+    <div class="intro-image">
+      <img src="bilder/em1.2.png" alt="Emely Hoppe">
+    </div>
+  </div>
+</section>
+
+
+<section class="skills-overview" id="skills">
+  <h2 class="section-title">Projekte von mir</h2>
+  <div class="skills-grid">
+
+    <a href="webdesign.html" class="skill-card">
+      <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>Webdesign</h3>
+    </a>
+
+    <a href="print-poster.html" class="skill-card">
+      <div class="skill-icon"><i class="fas fa-image"></i></div>
+      <h3>Print & Poster</h3>
+    </a>
+
+    <a href="creative-coding.html" class="skill-card">
+      <div class="skill-icon"><i class="fas fa-code"></i></div>
+      <h3>Creative Coding</h3>
+    </a>
+
+  </div> 
+</section> 
+
+<section class="tech-section">
+  <div class="tech-skills">
+    <h3 class="tech-title">Technische Skills</h3>
+    <div class="tech-columns">
+      <div class="tech-column">
+        <h4>Software</h4>
+        <div class="tech-tags">
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+          <span>InDesign</span>
+          <span>DaVinci Resolve</span>
+          <span>Figma</span>
+        </div>
+      </div>
+      <div class="tech-column">
+        <h4>Coding</h4>
+        <div class="tech-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>p5.js</span>
+          <span>MySQL</span>
+          <span>Unity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <span>Danke fürs Besuchen!!</span>
+      <span class="contact-links">
+        <a href="#">emelyhoppe195@gmail.com</a> 
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

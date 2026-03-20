@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emely Hoppe - Print & Poster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+ <header class="site-header">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">Über mich</a>
+
+    <div class="dropdown">
+      <span class="dropbtn">Projekte</span>
+      <div class="dropdown-content">
+        <a href="webdesign.html">Webdesign</a>
+        <a href="print-poster.html">Print & Poster</a>
+        <a href="creative-coding.html">Creative Coding</a>
+      </div>
+    </div>
+
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+<header class="hero-header">
+  <img src="bilder/em4.jpg" alt="Hero Bild" class="hero-header-image">
+
+  <div class="hero-header-text">
+    <h1 class="hero-title">PRINT &<br>POSTER</h1>
+  </div>
+</header>
+
+<div class="project-block">
+  <div class="project-content">
+    <div class="project-text">
+      <p>Ich arbeite gerne mit Collagen und kombiniere analoge Materialien mit digitaler Bearbeitung. Ich experimentiere mit unterschiedlichen Texturen, Bildausschnitten und Schrift. 
+    </div>
+    <div class="project-image">
+      <label for="lightbox-img" class="image-label">
+        <img src="bilder/Wortflut.png" alt="Wortflut" id="thumb-img">
+      </label>
+      <input type="checkbox" id="lightbox-img" class="lightbox-checkbox">
+      <label for="lightbox-img" class="lightbox-overlay">
+        <img src="bilder/Wortflut.png" alt="Wortflut Vergrößert">
+      </label>
+    </div>
+  </div>
+
+  <div class="project-subtitle-wrapper">
+    <h2 class="project-subtitle">Poster</h2>
+  </div>
+</div>
+
+<section class="image-pair-section">
+  <div class="image-pair-content">
+    <div class="image-pair-block">
+      <img src="bilder/fofp.png" alt="Fisch ohne Fahrrad" class="pair-img">
+      <img src="bilder/strobilusplakat2.png" alt="Strobilus" class="pair-img">
+    </div>
+    
+    <div class="image-pair-text">
+      <p>Außerdem gestalte ich gerne Poster, besonders Filmposter. Mich interessiert dabei, wie man eine Geschichte oder Stimmung in einem einzigen Bild sichtbar machen kann. Mit Typografie, Bildkomposition und Farben versuche ich, die Atmosphäre eines Films einzufangen und auf das Wesentliche zu reduzieren.</p>
+    </div>
+  </div>
+</section>
+
+  <div class="single-image-block">
+    <img src="bilder/indertiefe.png" alt="In der Tiefe" class="single-img">
+  </div>
+</section>
+
+<section class="features-slider-section">
+  <div class="slider-container">
+    <button class="slider-arrow prev" aria-label="Vorheriges Feature">‹</button>
+    
+    <div class="feature-tile">
+      <div class="feature-tile-content">
+        <div class="feature-tile-image">
+          <img src="bilder/filter.png" alt="Aktuelles Feature" id="current-feature-img">
+        </div>
+        <div class="feature-tile-text">
+          <h3 id="current-feature-title">Krimidinner</h3>
+          <p id="current-feature-desc">Ein größeres freies Projekt war ein selbst entwickeltes Krimidinner.</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="slider-arrow next" aria-label="Nächstes Feature">›</button>
+  </div>
+</section>
+
+<script>
+const features = [
+  { 
+    img: 'bilder/krimi.jpg', 
+    title: 'Krimidinner', 
+    desc: 'Ein größeres freies Projekt war ein selbst entwickeltes Krimidinner. Ich habe die Geschichte geschrieben und das gesamte Design gestaltet von Charakterbögen über Einladungen bis zu Spielmaterialien' 
+  },
+  { 
+    img: 'bilder/charakter.jpg', 
+    title: 'Charakterbogen', 
+    desc: '' 
+  },
+  { 
+    img: 'bilder/einladung.png', 
+    title: 'Einladung', 
+    desc: '' 
+  },
+  { 
+    img: 'bilder/spiel.jpg', 
+    title: 'Spielmaterialien', 
+    desc: '' 
+  }
+];
+
+let currentFeatureIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex + 1) % features.length;
+  updateFeature();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex - 1 + features.length) % features.length;
+  updateFeature();
+});
+
+function updateFeature() {
+  document.getElementById('current-feature-img').src = features[currentFeatureIndex].img;
+  document.getElementById('current-feature-title').textContent = features[currentFeatureIndex].title;
+  document.getElementById('current-feature-desc').textContent = features[currentFeatureIndex].desc;
+}
+
+updateFeature();
+  </script>
+</body>
+</html>
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <span>Danke fürs Besuchen!!</span>
+      <span class="contact-links">
+        <a href="#">emelyhoppe195@gmail.com</a> 
+      </span>
+    </div>
+  </div>
+</footer>

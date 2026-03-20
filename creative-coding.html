@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emely Hoppe - Creative Coding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+ <header class="site-header">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">Über mich</a>
+
+    <div class="dropdown">
+      <span class="dropbtn">Projekte</span>
+      <div class="dropdown-content">
+        <a href="webdesign.html">Webdesign</a>
+        <a href="print-poster.html">Print & Poster</a>
+        <a href="creative-coding.html">Creative Coding</a>
+      </div>
+    </div>
+
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<header class="hero-header">
+  <img src="bilder/em4.jpg" alt="Hero Bild" class="hero-header-image">
+
+  <div class="hero-header-text">
+    <h1 class="hero-title">CREATIVE<br>CODING</h1>
+  </div>
+</header>
+
+<div class="project-block">
+  <div class="project-content">
+    <div class="project-text">
+      <p>In meinen generativen Arbeiten nutze ich p5.js, um visuelle Systeme zu entwickeln, die sich durch Regeln, Bewegung und Zufall selbst erzeugen. Dieses Projekt zeigt eine Reihe generierter Kreisformen, die durch zufällige Variationen verzerrt und in mehreren Ebenen überlagert werdem. Kleine Rotationen und Verschiebungen erzeugen dabei Tiefe und Unregelmäßigkeit.
+    </div>
+    <div class="project-image">
+      <label for="lightbox-img" class="image-label">
+        <img src="bilder/creativecoding1.png" alt="Creative Coding 1" id="thumb-img">
+      </label>
+      <input type="checkbox" id="lightbox-img" class="lightbox-checkbox">
+      <label for="lightbox-img" class="lightbox-overlay">
+        <img src="bilder/creativecoding1.png" alt="Creative Coding 1 - Vergrößert">
+      </label>
+    </div>
+  </div>
+
+  <div class="project-subtitle-wrapper">
+    <h2 class="project-subtitle">Bewegung</h2>
+  </div>
+</div>
+
+<section class="image-pair-section">
+  <div class="image-pair-content">
+    <div class="image-pair-block">
+      <img src="bilder/creativecoding2.png" alt="Creative Coding 2" class="pair-img">
+      <img src="bilder/creativecoding3.png" alt="Creative Coding 3" class="pair-img">
+    </div>
+
+    <div class="image-pair-text">
+      <p>Weitere Projekte kombinieren autonome Bewegungssysteme mit generativem Zeichnen. Partikel bewegen sich durch den Raum und hinterlassen dabei Spuren oder formen visuelle „Abdrücke“, die sich mit der Zeit überlagern und wieder verschwinden. So entstehen organische, sich ständig wandelnde Kompositionen zwischen Struktur und Zufall, die an natürliche Prozesse oder flüchtige Erinnerungen erinnern.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="features-slider-section">
+  <div class="slider-container">
+    <button class="slider-arrow prev" aria-label="Vorheriges Feature">‹</button>
+    
+    <div class="feature-tile">
+      <div class="feature-tile-content">
+        <div class="feature-tile-image">
+          <img src="bilder/filter.png" alt="Aktuelles Feature" id="current-feature-img">
+        </div>
+        <div class="feature-tile-text">
+          <h3 id="current-feature-title">Digitales Bleigießen</h3>
+          <p id="current-feature-desc">Ein größeres Projekt war ein digitales Bleigießen.</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="slider-arrow next" aria-label="Nächstes Feature">›</button>
+  </div>
+</section>
+
+<script>
+const features = [
+  { 
+    img: 'bilder/digitalesbleigießen-1.png', 
+    title: 'Digitales Bleigießen', 
+    desc: 'Dieses interaktive Projekt übersetzt Sprache in Form. Nutzer*innen stellen eine Frage, die anschließend in eine generative 3D-Struktur überführt wird.' 
+  },
+  { 
+    img: 'bilder/digitalesbleigießen-2.png', 
+    title: '', 
+    desc: 'Basierend auf Textmerkmalen wie Länge, Wortanzahl oder Lautverteilung entsteht eine individuelle, organisch deformierte Figur, die an geschmolzenes Metall oder Bleigießen erinnert.' 
+  },
+  { 
+    img: 'bilder/digitalesbleigießen-3.png', 
+    title: '', 
+    desc: 'Die Form entwickelt sich zunächst dynamisch und erstarrt schließlich. Ein atmosphärischer, generativer Hintergrund verstärkt die mystische Inszenierung und schafft einen immersiven Raum zwischen Zufall, System und Bedeutung.' 
+  },
+];
+
+let currentFeatureIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex + 1) % features.length;
+  updateFeature();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex - 1 + features.length) % features.length;
+  updateFeature();
+});
+
+function updateFeature() {
+  document.getElementById('current-feature-img').src = features[currentFeatureIndex].img;
+  document.getElementById('current-feature-title').textContent = features[currentFeatureIndex].title;
+  document.getElementById('current-feature-desc').textContent = features[currentFeatureIndex].desc;
+}
+
+updateFeature();
+  </script>
+</body>
+</html>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <span>Danke fürs Besuchen!!</span>
+      <span class="contact-links">
+        <a href="#">emelyhoppe195@gmail.com</a> 
+      </span>
+    </div>
+  </div>
+</footer>

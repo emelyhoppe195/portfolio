@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emely Hoppe - Webdesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <header class="site-header">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">Über mich</a>
+
+    <div class="dropdown">
+      <span class="dropbtn">Projekte</span>
+      <div class="dropdown-content">
+        <a href="webdesign.html">Webdesign</a>
+        <a href="print-poster.html">Print & Poster</a>
+        <a href="creative-coding.html">Creative Coding</a>
+      </div>
+    </div>
+
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<header class="hero-header">
+  <img src="bilder/em4.jpg" alt="Hero Bild" class="hero-header-image">
+
+  <div class="hero-header-text">
+    <h1 class="hero-title">WEB-<br>DESIGN</h1>
+  </div>
+</header>
+
+<div class="project-block">
+  <div class="project-content">
+    <div class="project-text">
+      <p>Backwiese ist eine naturinspirierte Website für vegane Backrezepte. Ziel des Projekts war es, eine übersichtliche und ansprechende Rezeptplattform zu gestalten, die den Einstieg ins vegane Backen erleichtert und gleichzeitig eine ruhige, angenehme Nutzererfahrung bietet.</p>
+      <p>Gestalterisch greift die Website Motive aus der Natur auf, etwa Blumen, Wiesen und organische Formen. Diese Elemente wurden in eine warme, leicht handgemachte Optik übersetzt, die eher an ein digitales Kochbuch als an eine klassische Rezeptdatenbank erinnert. Die Seite soll zum Stöbern, Ausprobieren und Verweilen einladen.</p>
+    </div>
+    <div class="project-image">
+      <label for="lightbox-img" class="image-label">
+        <img src="bilder/hauptseite.jpg" alt="Backwiese" id="thumb-img">
+      </label>
+      <input type="checkbox" id="lightbox-img" class="lightbox-checkbox">
+      <label for="lightbox-img" class="lightbox-overlay">
+        <img src="bilder/hauptseite.jpg" alt="Backwiese Vergrößert">
+      </label>
+    </div>
+  </div>
+  
+  <div class="project-subtitle-wrapper">
+    <h2 class="project-subtitle">Rezeptseiten</h2>
+  </div>
+</div>
+
+<section class="recipe-features-section">
+  <div class="recipe-features-content">
+    <div class="recipe-image">
+      <img src="bilder/rezeptseite.png" alt="Backwiese Detail">
+    </div>
+    
+    <div class="recipe-text">
+      <p>Die Rezeptdetailseite stellt ein einzelnes Rezept in den Mittelpunkt. Ein großes Bild gibt einen ersten Eindruck, darunter folgen Zutatenliste und Zubereitung in klar gegliederter Form.</p>
+    </div>
+  </div>
+</section>
+
+<section class="features-slider-section">
+  <div class="slider-container">
+    <button class="slider-arrow prev" aria-label="Vorheriges Feature">‹</button>
+    
+    <div class="feature-tile">
+      <div class="feature-tile-content">
+        <div class="feature-tile-image">
+          <img src="bilder/filter.png" alt="Aktuelles Feature" id="current-feature-img">
+        </div>
+        <div class="feature-tile-text">
+          <h3 id="current-feature-title">Filter</h3>
+          <p id="current-feature-desc">Über Filter und Suche können Rezepte gezielt nach Schwierigkeit oder Zutaten gefunden werden.</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="slider-arrow next" aria-label="Nächstes Feature">›</button>
+  </div>
+</section>
+
+
+<script>
+const features = [
+  { 
+    img: 'bilder/filter.png', 
+    title: 'Filter', 
+    desc: 'Über Filter und Suche können Rezepte gezielt nach Schwierigkeit oder Zutaten gefunden werden.' 
+  },
+  { 
+    img: 'bilder/kommentare.png', 
+    title: 'Kommentare', 
+    desc: 'Kommentare und Bewertungen ermöglichen Austausch und Orientierung innerhalb der Rezeptsammlung.' 
+  },
+  { 
+    img: 'bilder/profil.png', 
+    title: 'Profile', 
+    desc: 'Registrierte Nutzer*innen können Rezepte bewerten, kommentieren und eigene Vorschläge einreichen. Außerdem können sie ihr Profil bearbeiten.' 
+  },
+  { 
+    img: 'bilder/rezept-bearbeiten.png', 
+    title: 'Rezepte bearbeiten', 
+    desc: 'Das Projektteam kann Rezepte verwalten und Inhalte pflegen. Bearbeitungsansichten sind klar strukturiert und funktional gehalten.' 
+  }
+];
+
+let currentFeatureIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex + 1) % features.length;
+  updateFeature();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentFeatureIndex = (currentFeatureIndex - 1 + features.length) % features.length;
+  updateFeature();
+});
+
+function updateFeature() {
+  document.getElementById('current-feature-img').src = features[currentFeatureIndex].img;
+  document.getElementById('current-feature-title').textContent = features[currentFeatureIndex].title;
+  document.getElementById('current-feature-desc').textContent = features[currentFeatureIndex].desc;
+}
+
+updateFeature();
+  </script>
+</body>
+</html>
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <span>Danke fürs Besuchen!!</span>
+      <span class="contact-links">
+        <a href="#">emelyhoppe195@gmail.com</a> 
+      </span>
+    </div>
+  </div>
+</footer>
