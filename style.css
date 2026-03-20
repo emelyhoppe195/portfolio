@@ -1159,3 +1159,112 @@ img {
   }
 
 }
+
+/* ===================================== */
+/* 🔥 FINAL FIX 2 – DETAILPROBLEME */
+/* ===================================== */
+@media (max-width: 768px) {
+
+  /* ================= STARTSEITE ================= */
+
+  /* EMELY HOPPE weiß */
+  .hero-name {
+    color: white !important;
+  }
+
+  /* NAV "Projekte" gleiche Größe */
+  .dropdown .dropbtn {
+    font-size: 0.95rem !important;
+    font-weight: normal !important;
+  }
+
+  /* ================= UNIVERSAL HEADER FIX ================= */
+  /* (für ALLE Seiten wie Über mich, Kontakt, Webdesign etc.) */
+
+  .hero-header {
+    position: relative !important;
+    min-height: 85vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-header img,
+  .hero-header-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 0 !important;
+  }
+
+  .hero-header-text {
+    position: relative !important;
+    z-index: 2 !important;
+    text-align: center !important;
+    padding: 2rem !important;
+    width: 100% !important;
+  }
+
+  /* ================= ÜBER MICH ================= */
+
+  /* Footer wird nicht mehr überdeckt */
+  footer {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .about-image {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* ================= PRINT & POSTER ================= */
+
+  /* Text überdeckt keine Bilder mehr */
+  .image-pair-text,
+  .project-text {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .image-pair-block,
+  .project-image {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Poster wird wieder sichtbar */
+  .pair-img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ================= CREATIVE CODING ================= */
+
+  /* Bilder nicht abgeschnitten */
+  .slider img {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Slider Pfeile fix */
+  .slider-button {
+    display: flex !important;
+    opacity: 1 !important;
+    z-index: 5 !important;
+  }
+
+  /* Beide Pfeile sichtbar */
+  .slider-button.prev {
+    left: 10px !important;
+  }
+
+  .slider-button.next {
+    right: 10px !important;
+  }
+
+}
