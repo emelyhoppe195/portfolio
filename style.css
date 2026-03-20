@@ -947,10 +947,8 @@ img {
   border-bottom-color: rgba(255,255,255,0.7);
 }
 
-/* Breakpoints */
-
 /* ===================================== */
-/* 🔥 FINAL MOBILE FIX – NICHTS GELÖSCHT */
+/* 🔥 MASTER MOBILE FIX (ALLES BEHOBEN)  */
 /* ===================================== */
 @media (max-width: 768px) {
 
@@ -958,37 +956,84 @@ img {
     overflow-x: hidden;
   }
 
-  /* ---------------- HERO ---------------- */
+  /* ================= HERO / HEADER ================= */
 
   .hero,
   .hero-header {
     height: auto !important;
-    min-height: 75vh !important;
+    min-height: 80vh !important;
     max-height: none !important;
-    padding: 3rem 0 !important;
+    position: relative;
   }
 
-  .hero-content {
-    flex-direction: column !important;
+  .hero::before,
+  .hero-header-image {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-header-text {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    height: auto !important;
-  }
-
-  .hero-text {
-    margin: 0 auto !important;
     padding: 2rem !important;
-    max-width: 90% !important;
   }
 
-  .hero-name,
   .hero-title,
-  .hero-title2 {
+  .hero-title2,
+  .hero-name {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
   }
 
-  /* ---------------- TEXT FIX ---------------- */
+  /* ❗ GRAUE ÜBERSCHRIFT FIX */
+  .hero-title,
+  .hero-title2 {
+    color: var(--contessa-dark-02) !important;
+  }
+
+  /* ================= "WILLKOMMEN" FIX ================= */
+
+  .hero-name,
+  .hero-greeting {
+    overflow: visible !important;
+  }
+
+  /* ================= NAVIGATION FIX ================= */
+
+  .main-nav {
+    gap: 0.8rem !important;
+    padding: 1rem !important;
+  }
+
+  .main-nav a,
+  .dropbtn {
+    font-size: 0.95rem !important;
+  }
+
+  /* ❗ "Projekte" nicht größer */
+  .dropdown .dropbtn {
+    font-size: 0.95rem !important;
+  }
+
+  /* ❗ DROPDOWN FIX */
+  .dropdown-content {
+    position: static !important;
+    display: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .dropdown:active .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
+    display: flex !important;
+  }
+
+  /* ================= TEXT NICHT MEHR ABGESCHNITTEN ================= */
 
   p, h1, h2, h3 {
     line-height: 1.4 !important;
@@ -999,7 +1044,7 @@ img {
     overflow: visible !important;
   }
 
-  /* ---------------- LAYOUT FIX ---------------- */
+  /* ================= LAYOUT FIX (ALLES SICHTBAR) ================= */
 
   .intro-content,
   .recipe-features-content,
@@ -1015,10 +1060,9 @@ img {
     width: 100% !important;
     margin: 0 !important;
     height: auto !important;
-    min-height: unset !important;
   }
 
-  /* ---------------- WIDTH FIX (DEINE HACKS) ---------------- */
+  /* ================= WIDTH BUG FIX (DEIN HAUPTPROBLEM) ================= */
 
   .hero-header,
   .intro-content,
@@ -1033,7 +1077,17 @@ img {
     right: 0 !important;
   }
 
-  /* ---------------- IMAGE FIX ---------------- */
+  /* ❗ TEXT WAR ZU WEIT RECHTS */
+  .project-text,
+  .image-pair-text,
+  .recipe-text,
+  .intro-text {
+    padding: 2rem 6% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* ================= BILDER FIX ================= */
 
   img,
   .project-image img,
@@ -1044,7 +1098,7 @@ img {
   .about-image {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
   }
 
   .project-image,
@@ -1054,45 +1108,36 @@ img {
     max-width: 100% !important;
   }
 
-  /* ---------------- SPACING ---------------- */
-
-  .intro-text,
-  .intro-image,
-  .recipe-text,
-  .recipe-image,
-  .project-text,
-  .project-image,
-  .image-pair-text,
-  .image-pair-block,
-  .about-text,
-  .feature-tile,
-  .tech-skills {
-    padding: 2rem 6% !important;
+  /* ❗ KONTAKT BILD FIX */
+  .about-image,
+  .pair-img {
+    object-fit: contain !important;
   }
 
-  section {
-    margin-bottom: 3rem !important;
+  /* ================= HEADER BILD ZU KLEIN FIX ================= */
+
+  .hero-header {
+    min-height: 85vh !important;
   }
 
-  /* ---------------- NAV ---------------- */
+  /* ================= KACHELN FIX ================= */
 
-  .main-nav {
-    gap: 1rem !important;
-    padding: 1rem !important;
+  .feature-tile {
+    height: auto !important;
+    padding: 2rem !important;
   }
 
-  .main-nav a {
-    font-size: 0.95rem !important;
+  .feature-tile-text h3 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
   }
 
-  /* ---------------- SUBTITLE ---------------- */
-
-  .project-subtitle {
-    position: static !important;
-    text-align: center !important;
+  /* ❗ TEXT ÜBERLÄUFT NICHT MEHR */
+  .feature-tile-text {
+    overflow: visible !important;
   }
 
-  /* ---------------- SLIDER ---------------- */
+  /* ================= SLIDER FIX ================= */
 
   .slider-container {
     flex-direction: column !important;
@@ -1100,10 +1145,17 @@ img {
     gap: 2rem !important;
   }
 
-  /* ---------------- ABOUT IMAGE FIX ---------------- */
+  /* ================= SUBTITLE FIX ================= */
 
-  .about-image {
-    width: 100% !important;
+  .project-subtitle {
+    position: static !important;
+    text-align: center !important;
+  }
+
+  /* ================= SPACING ================= */
+
+  section {
+    margin-bottom: 3rem !important;
   }
 
 }
