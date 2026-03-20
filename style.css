@@ -1050,3 +1050,113 @@ img {
     padding: 4rem 5% 3rem;
   }
 }
+
+/* ========================= */
+/* 🔥 MOBILE FIX (WICHTIG)  */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* ❌ Killt horizontales Scrollen */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* ❌ Entfernt alle 100vw Tricks */
+  .hero-header,
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .project-block {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* ❌ Entfernt ALLE crazy widths */
+  .project-image,
+  .about-image,
+  .pair-img,
+  .intro-image img,
+  .recipe-image img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ❌ Fix für abgeschnittene Bilder */
+  .project-image img,
+  .intro-image img,
+  .recipe-image img,
+  .feature-tile-image img,
+  .pair-img,
+  .about-image {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* ❌ Entfernt negative margins */
+  .hero-text,
+  .hero-title2 {
+    margin: 0 !important;
+  }
+
+  /* ✅ Zentriert Hero sauber */
+  .hero-content {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  /* ❌ Grid → untereinander */
+  .intro-content,
+  .skills-grid,
+  .project-content,
+  .about-split,
+  .feature-tile-content,
+  .tech-columns,
+  .image-pair-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+
+  /* ❌ Padding entschärfen */
+  .intro-text,
+  .intro-image,
+  .recipe-text,
+  .recipe-image,
+  .project-text,
+  .project-image,
+  .image-pair-text,
+  .image-pair-block,
+  .about-text {
+    padding: 2rem 5% !important;
+  }
+
+  /* ❌ Slider fix */
+  .slider-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* ❌ Navigation kompakter */
+  .main-nav {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+  }
+
+  /* ❌ Subtitle fix */
+  .project-subtitle {
+    position: static !important;
+    text-align: center;
+  }
+
+  /* ❌ About Bild killt Layout → fix */
+  .about-image {
+    width: 100% !important;
+  }
+}
