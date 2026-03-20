@@ -948,7 +948,7 @@ img {
 }
 
 /* ===================================== */
-/* 🔥 MASTER MOBILE FIX (ALLES BEHOBEN)  */
+/* 🔥 MASTER MOBILE FIX (ALLE SEITEN) */
 /* ===================================== */
 @media (max-width: 768px) {
 
@@ -957,84 +957,98 @@ img {
   }
 
   /* ================= HERO / HEADER ================= */
-
   .hero,
   .hero-header {
     height: auto !important;
-    min-height: 80vh !important;
+    min-height: 85vh !important;
     max-height: none !important;
     position: relative;
-  }
-
-  .hero::before,
-  .hero-header-image {
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-  .hero-header-text {
-    position: absolute !important;
-    inset: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    padding: 2rem !important;
   }
 
+  .hero::before,
+  .hero-header img,
+  .hero-header-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 0 !important;
+  }
+
+  .hero-header-text,
+  .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 2rem 5% !important;
+    width: 100% !important;
+  }
+
+  /* ================= ÜBERSCHRIFTEN ================= */
   .hero-title,
-  .hero-title2,
-  .hero-name {
+  .hero-title2 {
+    color: var(--contessa-dark-02) !important;
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
   }
 
-  /* ❗ GRAUE ÜBERSCHRIFT FIX */
-  .hero-title,
-  .hero-title2 {
-    color: var(--contessa-dark-02) !important;
+  /* Hauptseite: EMELY HOPPE weiß */
+  .hero-name {
+    color: #fff !important;
+    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
   }
 
-  /* ================= "WILLKOMMEN" FIX ================= */
-
-  .hero-name,
-  .hero-greeting {
+  .hero-greeting,
+  .hero-name {
     overflow: visible !important;
   }
 
-  /* ================= NAVIGATION FIX ================= */
-
+  /* ================= NAVIGATION ================= */
   .main-nav {
     gap: 0.8rem !important;
     padding: 1rem !important;
+    flex-wrap: wrap !important;
   }
 
   .main-nav a,
   .dropbtn {
     font-size: 0.95rem !important;
+    padding: 0.5rem 0.8rem !important;
   }
 
-  /* ❗ "Projekte" nicht größer */
+  /* "Projekte" gleiche Größe */
   .dropdown .dropbtn {
     font-size: 0.95rem !important;
+    font-weight: normal !important;
   }
 
-  /* ❗ DROPDOWN FIX */
+  /* Dropdown fix */
   .dropdown-content {
     position: static !important;
     display: none !important;
+    flex-direction: column !important;
     opacity: 1 !important;
     transform: none !important;
     box-shadow: none !important;
   }
 
   .dropdown:active .dropdown-content,
-  .dropdown:focus-within .dropdown-content {
+  .dropdown:focus-within .dropdown-content,
+  .dropdown:hover .dropdown-content {
     display: flex !important;
   }
 
-  /* ================= TEXT NICHT MEHR ABGESCHNITTEN ================= */
-
+  /* ================= TEXT / LAYOUT ================= */
   p, h1, h2, h3 {
     line-height: 1.4 !important;
     word-break: break-word;
@@ -1043,8 +1057,6 @@ img {
   section, div {
     overflow: visible !important;
   }
-
-  /* ================= LAYOUT FIX (ALLES SICHTBAR) ================= */
 
   .intro-content,
   .recipe-features-content,
@@ -1062,8 +1074,6 @@ img {
     height: auto !important;
   }
 
-  /* ================= WIDTH BUG FIX (DEIN HAUPTPROBLEM) ================= */
-
   .hero-header,
   .intro-content,
   .recipe-features-content,
@@ -1071,34 +1081,39 @@ img {
   .project-block,
   .full-red-divider {
     width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     left: 0 !important;
-    right: 0 !important;
   }
 
-  /* ❗ TEXT WAR ZU WEIT RECHTS */
   .project-text,
   .image-pair-text,
   .recipe-text,
-  .intro-text {
-    padding: 2rem 6% !important;
+  .intro-text,
+  .about-text,
+  .feature-tile-text {
     max-width: 100% !important;
+    padding: 1rem 6% !important;
     margin: 0 !important;
+    overflow: visible !important;
+    word-break: break-word !important;
+    line-height: 1.4 !important;
   }
 
-  /* ================= BILDER FIX ================= */
-
+  /* ================= BILDER ================= */
   img,
   .project-image img,
   .intro-image img,
   .recipe-image img,
   .feature-tile-image img,
   .pair-img,
-  .about-image {
+  .about-image,
+  .creative-img,
+  .slider img {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .project-image,
@@ -1108,20 +1123,20 @@ img {
     max-width: 100% !important;
   }
 
-  /* ❗ KONTAKT BILD FIX */
+  /* Kontakt / About */
   .about-image,
   .pair-img {
     object-fit: contain !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
 
-  /* ================= HEADER BILD ZU KLEIN FIX ================= */
-
-  .hero-header {
-    min-height: 85vh !important;
+  footer {
+    position: relative !important;
+    z-index: 5 !important;
   }
 
-  /* ================= KACHELN FIX ================= */
-
+  /* ================= KACHELN ================= */
   .feature-tile {
     height: auto !important;
     padding: 2rem !important;
@@ -1132,133 +1147,50 @@ img {
     line-height: 1.2 !important;
   }
 
-  /* ❗ TEXT ÜBERLÄUFT NICHT MEHR */
+  /* Text überlappt keine Kacheln */
   .feature-tile-text {
     overflow: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
   }
 
-  /* ================= SLIDER FIX ================= */
+  /* ================= POSTER & CREATIVE CODING ================= */
+  .image-pair-block,
+  .project-image,
+  .creative-coding-block {
+    flex-direction: column !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
 
+  .pair-img,
+  .creative-img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Text über Bilder */
+  .image-pair-text,
+  .creative-text {
+    margin-top: 1rem !important;
+    z-index: 2 !important;
+  }
+
+  /* ================= SLIDER ================= */
   .slider-container {
     flex-direction: column !important;
     height: auto !important;
     gap: 2rem !important;
   }
 
-  /* ================= SUBTITLE FIX ================= */
-
-  .project-subtitle {
-    position: static !important;
-    text-align: center !important;
-  }
-
-  /* ================= SPACING ================= */
-
-  section {
-    margin-bottom: 3rem !important;
-  }
-
-}
-
-/* ===================================== */
-/* 🔥 FINAL FIX 2 – DETAILPROBLEME */
-/* ===================================== */
-@media (max-width: 768px) {
-
-  /* ================= STARTSEITE ================= */
-
-  /* EMELY HOPPE weiß */
-  .hero-name {
-    color: white !important;
-  }
-
-  /* NAV "Projekte" gleiche Größe */
-  .dropdown .dropbtn {
-    font-size: 0.95rem !important;
-    font-weight: normal !important;
-  }
-
-  /* ================= UNIVERSAL HEADER FIX ================= */
-  /* (für ALLE Seiten wie Über mich, Kontakt, Webdesign etc.) */
-
-  .hero-header {
-    position: relative !important;
-    min-height: 85vh !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .hero-header img,
-  .hero-header-image {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    z-index: 0 !important;
-  }
-
-  .hero-header-text {
-    position: relative !important;
-    z-index: 2 !important;
-    text-align: center !important;
-    padding: 2rem !important;
-    width: 100% !important;
-  }
-
-  /* ================= ÜBER MICH ================= */
-
-  /* Footer wird nicht mehr überdeckt */
-  footer {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  .about-image {
-    position: relative !important;
-    z-index: 1 !important;
-  }
-
-  /* ================= PRINT & POSTER ================= */
-
-  /* Text überdeckt keine Bilder mehr */
-  .image-pair-text,
-  .project-text {
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  .image-pair-block,
-  .project-image {
-    position: relative !important;
-    z-index: 1 !important;
-  }
-
-  /* Poster wird wieder sichtbar */
-  .pair-img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* ================= CREATIVE CODING ================= */
-
-  /* Bilder nicht abgeschnitten */
-  .slider img {
-    object-fit: contain !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Slider Pfeile fix */
   .slider-button {
     display: flex !important;
     opacity: 1 !important;
     z-index: 5 !important;
   }
 
-  /* Beide Pfeile sichtbar */
   .slider-button.prev {
     left: 10px !important;
   }
@@ -1267,4 +1199,8 @@ img {
     right: 10px !important;
   }
 
+  /* ================= SPACING ================= */
+  section {
+    margin-bottom: 3rem !important;
+  }
 }
