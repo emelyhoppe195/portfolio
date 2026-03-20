@@ -949,156 +949,113 @@ img {
 
 /* Breakpoints */
 
-@media (max-width: 768px) {
-  .main-nav {
-    gap: 1rem;
-    padding: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0.8rem;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background-color: transparent;
-    display: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .hero, .hero-header {
-    height: auto;
-    min-height: 500px;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    margin: 0 5%;
-    justify-content: center;
-  }
-
-  .hero-text {
-    margin-right: 0;
-    max-width: 100%;
-    padding: 2rem;
-  }
-
-  .intro-content, .recipe-features-content, .image-pair-content, .feature-tile-content, .about-split, .project-content {
-    display: block;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    height: auto;
-  }
-
-  .intro-text, .intro-image, .recipe-text, .recipe-image, .image-pair-text, .image-pair-block, .feature-tile, .feature-tile-image, .feature-tile-text, .about-text, .about-image-block, .project-image, .project-text {
-    padding: 2rem 5%;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .intro-image img, .recipe-image img, .image-pair-block img, .feature-tile-image img, .about-image, .project-image img, .single-image-block .single-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .skill-card {
-    height: auto;
-  }
-
-  .slider-container {
-    flex-direction: column;
-    height: auto;
-    gap: 2rem;
-    padding: 2rem 5%;
-  }
-
-  .slider-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-
-  .project-subtitle-wrapper {
-    padding: 2rem 5%;
-  }
-
-  .project-subtitle {
-    text-align: center;
-    position: static;
-    margin: 0;
-  }
-
-  .footer-content p {
-    font-size: 2rem;
-  }
-
-  .site-footer {
-    padding: 4rem 5% 3rem;
-  }
-}
-
-/* ========================= */
-/* ✅ CLEAN MOBILE VERSION  */
-/* ========================= */
+/* ===================================== */
+/* 🔥 FINAL MOBILE FIX – NICHTS GELÖSCHT */
+/* ===================================== */
 @media (max-width: 768px) {
 
   html, body {
     overflow-x: hidden;
   }
 
-  /* 🔥 ALLE Sections normalisieren */
-  section,
+  /* ---------------- HERO ---------------- */
+
   .hero,
-  .intro-section,
-  .recipe-features-section,
-  .project-block,
-  .image-pair-section {
-    width: 100% !important;
-    margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  .hero-header {
+    height: auto !important;
+    min-height: 75vh !important;
+    max-height: none !important;
+    padding: 3rem 0 !important;
   }
 
-  /* 🔥 Entfernt ALLE 100vw Tricks */
-  *[style*="100vw"],
-  .hero-header,
-  .intro-content,
-  .recipe-features-content,
-  .image-pair-content {
-    width: 100% !important;
-    left: 0 !important;
-    margin-left: 0 !important;
+  .hero-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: auto !important;
   }
 
-  /* 🔥 ALLES untereinander */
+  .hero-text {
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    max-width: 90% !important;
+  }
+
+  .hero-name,
+  .hero-title,
+  .hero-title2 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* ---------------- TEXT FIX ---------------- */
+
+  p, h1, h2, h3 {
+    line-height: 1.4 !important;
+    word-break: break-word;
+  }
+
+  section, div {
+    overflow: visible !important;
+  }
+
+  /* ---------------- LAYOUT FIX ---------------- */
+
   .intro-content,
   .recipe-features-content,
-  .project-content,
   .image-pair-content,
   .feature-tile-content,
   .about-split,
+  .project-content,
   .skills-grid,
   .tech-columns {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2rem;
+    gap: 2rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: unset !important;
   }
 
-  /* 🔥 Padding vereinheitlichen */
+  /* ---------------- WIDTH FIX (DEINE HACKS) ---------------- */
+
+  .hero-header,
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .project-block,
+  .full-red-divider {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* ---------------- IMAGE FIX ---------------- */
+
+  img,
+  .project-image img,
+  .intro-image img,
+  .recipe-image img,
+  .feature-tile-image img,
+  .pair-img,
+  .about-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .project-image,
+  .about-image,
+  .pair-img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ---------------- SPACING ---------------- */
+
   .intro-text,
   .intro-image,
   .recipe-text,
@@ -1113,80 +1070,40 @@ img {
     padding: 2rem 6% !important;
   }
 
-  /* 🔥 Bilder IMMER korrekt */
-  img,
-  .project-image img,
-  .intro-image img,
-  .recipe-image img,
-  .feature-tile-image img,
-  .pair-img,
-  .about-image {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
+  section {
+    margin-bottom: 3rem !important;
   }
 
-  /* 🔥 Entfernt alle kaputten Größen */
-  .project-image,
-  .about-image,
-  .pair-img {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
+  /* ---------------- NAV ---------------- */
 
-  /* 🔥 Hero fix */
-  .hero {
-    height: auto;
-    min-height: 500px;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-text {
-    margin: 0 !important;
-    padding: 2rem;
-  }
-
-  .hero-title,
-  .hero-name {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-  }
-
-  /* 🔥 Navigation */
   .main-nav {
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    padding: 1rem;
+    gap: 1rem !important;
+    padding: 1rem !important;
   }
 
   .main-nav a {
-    font-size: 0.9rem;
+    font-size: 0.95rem !important;
   }
 
-  /* 🔥 Slider fix */
-  .slider-container {
-    flex-direction: column;
-    height: auto;
-    gap: 2rem;
-  }
+  /* ---------------- SUBTITLE ---------------- */
 
-  /* 🔥 Subtitle fix */
   .project-subtitle {
     position: static !important;
-    text-align: center;
+    text-align: center !important;
   }
 
-  /* 🔥 Entfernt feste Höhen */
-  .intro-content,
-  .recipe-features-content,
-  .image-pair-content,
+  /* ---------------- SLIDER ---------------- */
+
   .slider-container {
+    flex-direction: column !important;
     height: auto !important;
-    min-height: unset !important;
+    gap: 2rem !important;
+  }
+
+  /* ---------------- ABOUT IMAGE FIX ---------------- */
+
+  .about-image {
+    width: 100% !important;
   }
 
 }
