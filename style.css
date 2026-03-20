@@ -948,12 +948,14 @@ img {
 }
 
 /* ===================================== */
-/* 🔥 MASTER MOBILE FIX 3 – ALLE SEITEN */
+/* 🔥 MASTER MOBILE FIX KOMBINED – ALLE SEITEN */
 /* ===================================== */
 @media (max-width: 768px) {
 
   html, body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   /* ================= HERO / HEADER ================= */
@@ -968,20 +970,32 @@ img {
     justify-content: center !important;
     text-align: center !important;
     padding: 2rem 5% !important;
+    width: 100% !important;
   }
 
   .hero-header img,
-  .hero-header-image {
-    position: absolute !important;
-    inset: 0 !important;
+  .hero-header-image,
+  .intro-img,
+  .webdesign-img,
+  .contact-img,
+  .creative-img,
+  .pair-img {
+    position: relative !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto 1.5rem auto !important;
     z-index: 0 !important;
   }
 
   .hero-header-text,
-  .hero-content {
+  .hero-content,
+  .intro-text,
+  .about-text,
+  .project-text,
+  .creative-text,
+  .image-pair-text {
     position: relative !important;
     z-index: 2 !important;
     display: flex !important;
@@ -990,27 +1004,42 @@ img {
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem 5% !important;
+    overflow: visible !important;
   }
 
-  /* Header Überschriften */
+  /* ================= ÜBERSCHRIFTEN ================= */
   .hero-title,
-  .hero-title2,
-  .hero-name {
+  .hero-title2 {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
+    text-align: center !important;
     margin-bottom: 0.5rem !important;
+    color: var(--contessa-dark-02) !important;
   }
 
   /* Index: EMELY HOPPE weiß */
   .hero-name {
     color: #fff !important;
+    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .hero-greeting {
+    overflow: visible !important;
+    text-align: center !important;
   }
 
   /* ================= NAVIGATION ================= */
   .main-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 0.8rem !important;
     padding: 1rem !important;
-    flex-wrap: wrap !important;
+    justify-content: center !important;
     position: relative !important;
   }
 
@@ -1018,6 +1047,7 @@ img {
   .dropbtn {
     font-size: 0.95rem !important;
     padding: 0.5rem 0.8rem !important;
+    text-align: center !important;
   }
 
   .dropdown .dropbtn {
@@ -1039,6 +1069,7 @@ img {
     flex-direction: column !important;
     background: white !important;
     z-index: 10 !important;
+    text-align: center !important;
   }
 
   .dropdown:focus-within .dropdown-content,
@@ -1050,10 +1081,15 @@ img {
   p, h1, h2, h3 {
     line-height: 1.4 !important;
     word-break: break-word !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 
   section, div {
     overflow: visible !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 
   .intro-content,
@@ -1084,9 +1120,11 @@ img {
     overflow: visible !important;
     position: relative !important;
     z-index: 2 !important;
+    line-height: 1.4 !important;
   }
 
   /* ================= BILDER ================= */
+  /* Alle Bilder responsive */
   img,
   .project-image img,
   .intro-image img,
@@ -1102,7 +1140,7 @@ img {
     margin-bottom: 1.5rem !important;
   }
 
-  /* Bilder untereinander (Poster, Creative Coding) */
+  /* Poster & Creative Coding untereinander */
   .image-pair-block,
   .project-image,
   .creative-coding-block {
@@ -1122,7 +1160,7 @@ img {
     z-index: 5 !important;
   }
 
-  /* ================= ABSTÄNDE ZWISCHEN KOMBINIEREN ================= */
+  /* ================= ABSTÄNDE ZWISCHEN KOMPONENTEN ================= */
   .hero-header + section,
   .about-text + .about-image,
   .project-text + .project-image,
@@ -1142,11 +1180,11 @@ img {
     line-height: 1.2 !important;
   }
 
-  /* Text überlappt keine Kacheln */
   .feature-tile-text {
     overflow: visible !important;
     position: relative !important;
     z-index: 2 !important;
+    text-align: center !important;
   }
 
   /* ================= SLIDER ================= */
@@ -1174,4 +1212,5 @@ img {
   section {
     margin-bottom: 3rem !important;
   }
+
 }
