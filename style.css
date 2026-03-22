@@ -995,9 +995,15 @@ img {
     padding: 0 1rem !important;
   }
 
+  /* ✅ FIX: Hero Text Farben */
   .hero-name {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
+    color: #fff !important;
+  }
+
+  .hero-title2 {
+    color: #fff !important;
   }
 
   /* ================= NAV ================= */
@@ -1013,7 +1019,7 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* DROPDOWN FIX */
+  /* ✅ FIX: Dropdown Mobile stabil */
   .dropdown-content {
     position: static !important;
     display: none !important;
@@ -1023,12 +1029,14 @@ img {
     transform: none !important;
   }
 
+  .dropdown:active .dropdown-content,
+  .dropdown:focus .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: flex !important;
   }
 
   .dropbtn {
-    pointer-events: auto;
+    cursor: pointer;
   }
 
   /* ================= LAYOUT ================= */
@@ -1083,7 +1091,23 @@ img {
     object-fit: cover !important;
   }
 
-  .intro-image,
+  /* ✅ FIX: Intro Image wieder sichtbar */
+  .intro-image {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 300px !important;
+    padding: 2rem 6% !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .intro-image img {
+    display: block !important;
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
   .recipe-image,
   .image-pair-block {
     padding: 2rem 6% !important;
@@ -1092,7 +1116,6 @@ img {
     height: auto !important;
   }
 
-  .intro-image img,
   .recipe-image img {
     max-width: 100% !important;
     max-height: none !important;
@@ -1107,21 +1130,25 @@ img {
     height: auto !important;
   }
 
-  /* IMAGE PAIR FIX (KEIN OVERLAP) */
+  /* ================= IMAGE PAIR FIX ================= */
   .image-pair-content {
     height: auto !important;
+    gap: 3rem !important;
   }
 
   .image-pair-block {
     flex-direction: column !important;
     z-index: 1 !important;
+    padding-bottom: 4rem !important;
   }
 
+  /* ✅ FIX: Bilder NICHT mehr abgeschnitten */
   .pair-img {
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
-    margin-bottom: 1.5rem !important;
+    object-fit: contain !important;
+    margin-bottom: 2rem !important;
     z-index: 2 !important;
   }
 
