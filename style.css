@@ -948,7 +948,7 @@ img {
 }
 
 /* ===================================== */
-/* 🔥 MASTER MOBILE FIX (ALLE SEITEN) */
+/* 🔥 MOBILE CLEAN FIX (ALLE SEITEN) */
 /* ===================================== */
 @media (max-width: 768px) {
 
@@ -956,20 +956,21 @@ img {
     overflow-x: hidden;
   }
 
-  /* ================= HERO / HEADER ================= */
+  * {
+    max-width: 100%;
+  }
+
+  /* ================= HERO ================= */
   .hero,
   .hero-header {
     height: auto !important;
     min-height: 85vh !important;
-    max-height: none !important;
-    position: relative;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
 
   .hero::before,
-  .hero-header img,
   .hero-header-image {
     position: absolute !important;
     inset: 0 !important;
@@ -979,40 +980,27 @@ img {
     z-index: 0 !important;
   }
 
-  .hero-header-text,
-  .hero-content {
+  .hero-content,
+  .hero-header-text {
     position: relative !important;
     z-index: 2 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
     text-align: center !important;
     padding: 2rem 5% !important;
     width: 100% !important;
   }
 
-  /* ================= ÜBERSCHRIFTEN ================= */
-  .hero-title,
-  .hero-title2 {
-    color: var(--contessa-dark-02) !important;
+  .hero-text {
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  .hero-name {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
   }
 
-  .hero-name {
-    color: #fff !important;
-    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
-    line-height: 1.1 !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .hero-greeting,
-  .hero-name {
-    overflow: visible !important;
-  }
-
-  /* ================= NAVIGATION ================= */
+  /* ================= NAV ================= */
   .main-nav {
     gap: 0.8rem !important;
     padding: 1rem !important;
@@ -1025,36 +1013,25 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  .dropdown .dropbtn {
-    font-size: 0.95rem !important;
-    font-weight: normal !important;
-  }
-
+  /* DROPDOWN FIX */
   .dropdown-content {
     position: static !important;
     display: none !important;
     flex-direction: column !important;
+    box-shadow: none !important;
     opacity: 1 !important;
     transform: none !important;
-    box-shadow: none !important;
   }
 
-  .dropdown:active .dropdown-content,
-  .dropdown:focus-within .dropdown-content,
-  .dropdown:hover .dropdown-content {
+  .dropdown:focus-within .dropdown-content {
     display: flex !important;
   }
 
-  /* ================= TEXT / LAYOUT ================= */
-  p, h1, h2, h3 {
-    line-height: 1.4 !important;
-    word-break: break-word;
+  .dropbtn {
+    pointer-events: auto;
   }
 
-  section, div {
-    overflow: visible !important;
-  }
-
+  /* ================= LAYOUT ================= */
   .intro-content,
   .recipe-features-content,
   .image-pair-content,
@@ -1083,93 +1060,85 @@ img {
     left: 0 !important;
   }
 
-  .project-text,
-  .image-pair-text,
-  .recipe-text,
+  /* ================= TEXT ================= */
   .intro-text,
+  .recipe-text,
+  .image-pair-text,
+  .project-text,
   .about-text,
   .feature-tile-text {
     max-width: 100% !important;
     padding: 1rem 6% !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    word-break: break-word !important;
-    line-height: 1.4 !important;
   }
 
-  /* ================= BILDER ================= */
-  img,
-  .project-image img,
-  .intro-image img,
-  .recipe-image img,
-  .feature-tile-image img,
-  .pair-img,
-  .about-image,
-  .creative-img,
-  .slider img {
+  p, h1, h2, h3 {
+    line-height: 1.4 !important;
+    word-break: break-word;
+  }
+
+  /* ================= IMAGES ================= */
+  img {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
-    margin-bottom: 1.5rem !important;
   }
 
-  .project-image,
-  .about-image,
-  .pair-img {
+  .intro-image,
+  .recipe-image,
+  .image-pair-block {
+    padding: 2rem 6% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
+  }
+
+  .intro-image img,
+  .recipe-image img {
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  .project-image {
     width: 100% !important;
     max-width: 100% !important;
   }
 
-  .about-image,
-  .pair-img {
-    object-fit: contain !important;
-    position: relative !important;
-    z-index: 1 !important;
-  }
-
-  footer {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  /* ================= KACHELN ================= */
-  .feature-tile {
+  .project-image img {
     height: auto !important;
-    padding: 2rem !important;
   }
 
-  .feature-tile-text h3 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
+  /* IMAGE PAIR FIX (KEIN OVERLAP) */
+  .image-pair-content {
+    height: auto !important;
   }
 
-  .feature-tile-text {
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  /* ================= POSTER & CREATIVE CODING ================= */
-  .image-pair-block,
-  .project-image,
-  .creative-coding-block {
+  .image-pair-block {
     flex-direction: column !important;
-    position: relative !important;
     z-index: 1 !important;
   }
 
-  .pair-img,
-  .creative-img {
-    display: block !important;
+  .pair-img {
     width: 100% !important;
     height: auto !important;
-    margin-bottom: 2rem !important;
+    max-height: none !important;
+    margin-bottom: 1.5rem !important;
+    z-index: 2 !important;
   }
 
-  .image-pair-text,
-  .creative-text {
-    margin-top: 1rem !important;
-    z-index: 2 !important;
+  .image-pair-text {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  .single-image-block {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  /* ================= ABOUT ================= */
+  .about-image {
+    width: 100% !important;
+    height: auto !important;
   }
 
   /* ================= SLIDER ================= */
@@ -1177,20 +1146,29 @@ img {
     flex-direction: column !important;
     height: auto !important;
     gap: 2rem !important;
-  }
-
-  .slider-button {
-    display: flex !important;
-    opacity: 1 !important;
+    position: relative !important;
     z-index: 5 !important;
   }
 
-  .slider-button.prev {
-    left: 10px !important;
+  .feature-tile {
+    height: auto !important;
+    padding: 2rem !important;
   }
 
-  .slider-button.next {
-    right: 10px !important;
+  .feature-tile-text h3 {
+    font-size: 2rem !important;
+  }
+
+  /* ================= FOOTER ================= */
+  .site-footer {
+    margin-top: 4rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .footer-content {
+    position: relative !important;
+    z-index: 10 !important;
   }
 
   /* ================= SPACING ================= */
