@@ -948,8 +948,6 @@ img {
 }
 
 @media (max-width: 768px) {
-
-  /* Grundlegendes */
   html, body {
     overflow-x: hidden;
   }
@@ -959,7 +957,6 @@ img {
     box-sizing: border-box;
   }
 
-  /* ================= HERO ================= */
   .hero,
   .hero-header {
     height: auto !important;
@@ -1000,7 +997,6 @@ img {
     color: #fff !important;
   }
 
-  /* ================= NAV ================= */
   .main-nav {
     gap: 0.8rem !important;
     padding: 1rem !important;
@@ -1014,12 +1010,10 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-/* ❗ "Projekte" nicht größer */
   .dropdown .dropbtn {
     font-size: 0.95rem !important;
   }
 
-  /* ❗ DROPDOWN FIX */
   .dropdown-content {
     position: static !important;
     display: none !important;
@@ -1033,7 +1027,6 @@ img {
     display: flex !important;
   }
 
-  /* ================= LAYOUT ================= */
   .intro-content,
   .recipe-features-content,
   .image-pair-content,
@@ -1051,7 +1044,6 @@ img {
     height: auto !important;
   }
 
-  /* ================= SECTIONS BREITE ================= */
   .hero-header,
   .intro-content,
   .recipe-features-content,
@@ -1064,7 +1056,6 @@ img {
     left: 0 !important;
   }
 
-  /* ================= TEXT ================= */
   .intro-text,
   .recipe-text,
   .image-pair-text,
@@ -1080,7 +1071,6 @@ img {
     word-break: break-word;
   }
 
-  /* ================= IMAGES ================= */
   img {
     width: 100% !important;
     height: auto !important;
@@ -1111,7 +1101,6 @@ img {
     object-fit: contain !important;
   }
 
-  /* ================= IMAGE PAIR ================= */
   .image-pair-content {
     height: auto !important;
     gap: 3rem !important;
@@ -1130,13 +1119,11 @@ img {
     z-index: 2 !important;
   }
 
-  /* ================= ABOUT ================= */
   .about-image {
     width: 100% !important;
     height: auto !important;
   }
 
-  /* ================= SLIDER ================= */
   .slider-container {
     flex-direction: column !important;
     height: auto !important;
@@ -1154,7 +1141,6 @@ img {
     font-size: 2rem !important;
   }
 
-  /* ================= FOOTER ================= */
   .site-footer {
     margin-top: 4rem !important;
     position: relative !important;
@@ -1166,7 +1152,6 @@ img {
     z-index: 10 !important;
   }
 
-  /* ================= SPACING ================= */
   section {
     margin-bottom: 3rem !important;
   }
