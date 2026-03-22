@@ -1014,24 +1014,23 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* Dropdown (CSS-only best effort) */
+/* ❗ "Projekte" nicht größer */
+  .dropdown .dropbtn {
+    font-size: 0.95rem !important;
+  }
+
+  /* ❗ DROPDOWN FIX */
   .dropdown-content {
     position: static !important;
     display: none !important;
-    flex-direction: column !important;
-    box-shadow: none !important;
     opacity: 1 !important;
     transform: none !important;
+    box-shadow: none !important;
   }
 
-  .dropdown:hover .dropdown-content,
   .dropdown:active .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: flex !important;
-  }
-
-  .dropbtn {
-    cursor: pointer;
   }
 
   /* ================= LAYOUT ================= */
