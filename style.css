@@ -998,7 +998,6 @@ img {
     color: #fff !important;
   }
 
-  /* 🔥 FIX: NICHT mehr weiß global */
   .hero-title2 {
     color: var(--contessa-dark-01) !important;
   }
@@ -1016,18 +1015,29 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* 🔥 Dropdown (JS gesteuert) */
-  .dropdown-content {
-    position: static !important;
-    display: none !important;
+  /* 🔥 Dropdown Mobile Fix (immer sichtbar) */
+  .dropdown {
+    display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .dropdown-content {
+    display: flex !important;
+    flex-direction: column !important;
+    position: static !important;
+    width: 100% !important;
     box-shadow: none !important;
+    padding: 0 !important;
     opacity: 1 !important;
     transform: none !important;
   }
 
-  .dropdown.open .dropdown-content {
-    display: flex !important;
+  .dropdown-content a {
+    text-align: center !important;
+    padding: 0.5rem 0 !important;
+    width: 100% !important;
   }
 
   /* ================= LAYOUT ================= */
@@ -1048,30 +1058,32 @@ img {
   }
 
   /* ================= IMAGES ================= */
-
-  /* 🔥 FIX: Intro Image FINAL */
+  /* Intro Image */
   .intro-image {
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     width: 100% !important;
-    min-height: 350px !important;
-
+    min-height: 300px !important;
+    padding: 2rem !important;
     background: url('../bilder/rot1.png') center/cover no-repeat !important;
   }
 
   .intro-image img {
     width: 100% !important;
     height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
   }
 
-  /* 🔥 FINAL IMAGE PAIR FIX */
+  /* Image-Pair Fix */
   .image-pair-block {
     display: flex !important;
     flex-direction: column !important;
     gap: 2rem !important;
-
     height: auto !important;
     overflow: visible !important;
-    padding-bottom: 6rem !important;
+    padding: 2rem !important;
   }
 
   .image-pair-content {
@@ -1081,10 +1093,8 @@ img {
   .pair-img {
     width: 100% !important;
     height: auto !important;
-
     object-fit: contain !important;
     max-height: none !important;
-
     flex-shrink: 0 !important;
   }
 
