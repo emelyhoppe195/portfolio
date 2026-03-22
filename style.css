@@ -995,14 +995,9 @@ img {
     padding: 0 1rem !important;
   }
 
-  /* ✅ FIX: Hero Text Farben */
   .hero-name {
     font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     line-height: 1.1 !important;
-    color: #fff !important;
-  }
-
-  .hero-title2 {
     color: #fff !important;
   }
 
@@ -1019,7 +1014,7 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* ✅ FIX: Dropdown Mobile stabil */
+  /* 🔥 Dropdown (CSS-only best effort) */
   .dropdown-content {
     position: static !important;
     display: none !important;
@@ -1029,8 +1024,8 @@ img {
     transform: none !important;
   }
 
+  .dropdown:hover .dropdown-content,
   .dropdown:active .dropdown-content,
-  .dropdown:focus .dropdown-content,
   .dropdown:focus-within .dropdown-content {
     display: flex !important;
   }
@@ -1091,21 +1086,24 @@ img {
     object-fit: cover !important;
   }
 
-  /* ✅ FIX: Intro Image wieder sichtbar */
+  /* 🔥 ÜBER MICH FIX (Intro Image sichtbar) */
   .intro-image {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 300px !important;
+    min-height: 350px !important;
+
     padding: 2rem 6% !important;
+
+    background-image: url('bilder/rot1.png') !important;
     background-size: cover !important;
     background-position: center !important;
   }
 
   .intro-image img {
     display: block !important;
-    max-width: 100% !important;
-    max-height: none !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
   .recipe-image,
@@ -1137,19 +1135,30 @@ img {
   }
 
   .image-pair-block {
+    display: flex !important;
     flex-direction: column !important;
-    z-index: 1 !important;
-    padding-bottom: 4rem !important;
+    gap: 2rem !important;
+
+    height: auto !important;
+    padding-bottom: 5rem !important;
   }
 
-  /* ✅ FIX: Bilder NICHT mehr abgeschnitten */
+  /* 🔥 WICHTIGSTER FIX */
   .pair-img {
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
+
     object-fit: contain !important;
+    aspect-ratio: auto !important;
+
+    flex-shrink: 0 !important;
     margin-bottom: 2rem !important;
-    z-index: 2 !important;
+  }
+
+  /* Falls irgendwas noch schneidet */
+  .image-pair-block * {
+    max-height: none !important;
   }
 
   .image-pair-text {
