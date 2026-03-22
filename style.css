@@ -4,13 +4,13 @@
   --whiterock: #EBE9D6;
   --whiterock-dark-01: #C8C6AE;
   --whiterock-dark-02: #A7A387;
-  
+
   /* Contessa Akzentfarbe (für pp und Navigation) */
   --contessa-light: #E68F7F;
   --contessa: #C96E5F;
   --contessa-dark-01: #B35648;
   --contessa-dark-02: #984237;
-  
+
   /* Textfarben */
   --text-dark: #2d2d2d;
   --text-medium: #5a5a5a;
@@ -268,7 +268,8 @@ img {
   pointer-events: none;
 }
 
-.hero-title, .hero-title2 {
+.hero-title,
+.hero-title2 {
   font-family: 'Shrikhand';
   font-size: clamp(4rem, 9vw, 6.5rem);
   line-height: 0.85;
@@ -276,8 +277,15 @@ img {
   letter-spacing: 0.05em;
 }
 
-.hero-title { color: var(--contessa-dark-02); }
-.hero-title2 { color: var(--contessa-dark-01); margin-right: 0; margin-bottom: 0; }
+.hero-title {
+  color: var(--contessa-dark-02);
+}
+
+.hero-title2 {
+  color: var(--contessa-dark-01);
+  margin-right: 0;
+  margin-bottom: 0;
+}
 
 .hero-sub {
   font-family: 'Ubuntu', sans-serif;
@@ -460,7 +468,7 @@ img {
   background: var(--whiterock-light-01);
   border-radius: 24px;
   border: 1px solid var(--whiterock-dark-01);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .tech-title {
@@ -497,7 +505,7 @@ img {
   font-weight: 500;
   padding: 0.55rem 1.1rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--whiterock-dark-01);
   color: var(--text-medium);
   transition: all 0.25s ease;
@@ -581,7 +589,7 @@ img {
   cursor: zoom-out;
 }
 
-.lightbox-checkbox:checked + .lightbox-overlay {
+.lightbox-checkbox:checked+.lightbox-overlay {
   opacity: 1;
   visibility: visible;
 }
@@ -714,7 +722,7 @@ img {
   background: var(--whiterock-light-01);
   border-radius: 32px;
   padding: 4rem 5rem;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.18);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;
 }
@@ -908,7 +916,7 @@ img {
 
 .footer-content p {
   font-size: 4rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   font-weight: 300;
   margin: 0 0 2rem 0;
   letter-spacing: 0.2em;
@@ -931,26 +939,27 @@ img {
 .contact-links {
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-links a {
   color: var(--whiterock);
   text-decoration: none;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.2rem;
 }
 
 .contact-links a:hover {
   color: var(--whiterock-dark-01);
-  border-bottom-color: rgba(255,255,255,0.7);
+  border-bottom-color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {
 
   /* Grundlegendes */
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -1065,6 +1074,37 @@ img {
     left: 0 !important;
   }
 
+  .project-block {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .project-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2rem 5% !important;
+  }
+
+  .project-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: center !important;
+  }
+
+  .project-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border: 8px solid #2d2d2d;
+  }
+
+
   /* ================= TEXT ================= */
   .intro-text,
   .recipe-text,
@@ -1076,7 +1116,10 @@ img {
     padding: 1rem 6% !important;
   }
 
-  p, h1, h2, h3 {
+  p,
+  h1,
+  h2,
+  h3 {
     line-height: 1.4 !important;
     word-break: break-word;
   }
