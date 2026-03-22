@@ -947,6 +947,9 @@ img {
   border-bottom-color: rgba(255,255,255,0.7);
 }
 
+/* ===================================== */
+/* 🔥 MOBILE CLEAN FIX (ALLE SEITEN) */
+/* ===================================== */
 @media (max-width: 768px) {
 
   html, body {
@@ -955,7 +958,6 @@ img {
 
   * {
     max-width: 100%;
-    box-sizing: border-box;
   }
 
   /* ================= HERO ================= */
@@ -985,7 +987,6 @@ img {
     text-align: center !important;
     padding: 2rem 5% !important;
     width: 100% !important;
-    margin: 0 auto !important;
   }
 
   .hero-text {
@@ -1000,17 +1001,11 @@ img {
     color: #fff !important;
   }
 
-  .hero-title2 {
-    color: var(--contessa-dark-01) !important;
-  }
-
   /* ================= NAV ================= */
   .main-nav {
     gap: 0.8rem !important;
     padding: 1rem !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
-    margin: 0 auto !important;
   }
 
   .main-nav a,
@@ -1019,7 +1014,7 @@ img {
     padding: 0.5rem 0.8rem !important;
   }
 
-  /* Dropdown */
+  /* 🔥 Dropdown (CSS-only best effort) */
   .dropdown-content {
     position: static !important;
     display: none !important;
@@ -1029,8 +1024,14 @@ img {
     transform: none !important;
   }
 
-  .dropdown.open .dropdown-content {
+  .dropdown:hover .dropdown-content,
+  .dropdown:active .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
     display: flex !important;
+  }
+
+  .dropbtn {
+    cursor: pointer;
   }
 
   /* ================= LAYOUT ================= */
@@ -1048,86 +1049,167 @@ img {
     width: 100% !important;
     margin: 0 !important;
     height: auto !important;
-    padding: 0 5% !important;
-    left: 0 !important;
-    right: 0 !important;
   }
 
-  /* ================= IMAGES ================= */
-  .intro-image,
-  .recipe-image,
-  .image-pair-block,
-  .project-image img,
-  .pair-img,
-  .feature-tile-image img,
-  .about-image,
-  .single-image-block .single-img {
+  .hero-header,
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .project-block,
+  .full-red-divider {
     width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 !important;
+    left: 0 !important;
   }
 
-  .intro-image {
-    min-height: 350px !important;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-
-  .image-pair-block {
-    flex-direction: column !important;
-    gap: 2rem !important;
-    padding-bottom: 3rem !important;
-  }
-
-  .image-pair-content * {
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  /* ================= TEXT ADJUSTMENTS ================= */
+  /* ================= TEXT ================= */
   .intro-text,
   .recipe-text,
   .image-pair-text,
   .project-text,
-  .feature-tile-text,
-  .about-text {
-    padding: 2rem 1rem !important;
+  .about-text,
+  .feature-tile-text {
     max-width: 100% !important;
-    margin: 0 auto !important;
+    padding: 1rem 6% !important;
   }
 
-  .hero-greeting,
-  .hero-name,
-  .hero-sub,
-  .intro-title,
-  .project-subtitle,
-  .section-title,
-  .feature-tile-text h3 {
-    text-align: center !important;
+  p, h1, h2, h3 {
+    line-height: 1.4 !important;
+    word-break: break-word;
   }
 
-  /* ================= GRIDS ================= */
-  .skills-grid,
-  .tech-columns {
+  /* ================= IMAGES ================= */
+  img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* 🔥 ÜBER MICH FIX (Intro Image sichtbar) */
+  .intro-image {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 350px !important;
+
+    padding: 2rem 6% !important;
+
+    background-image: url('bilder/rot1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .intro-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .recipe-image,
+  .image-pair-block {
+    padding: 2rem 6% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
+  }
+
+  .recipe-image img {
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  .project-image {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .project-image img {
+    height: auto !important;
+  }
+
+  /* ================= IMAGE PAIR FIX ================= */
+  .image-pair-content {
+    height: auto !important;
+    gap: 3rem !important;
+  }
+
+  .image-pair-block {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1.5rem !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  .feature-tile-content,
-  .about-split {
-    flex-direction: column !important;
     gap: 2rem !important;
+
+    height: auto !important;
+    padding-bottom: 5rem !important;
   }
 
-  .tech-skills {
+  /* 🔥 WICHTIGSTER FIX */
+  .pair-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+    aspect-ratio: auto !important;
+
+    flex-shrink: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Falls irgendwas noch schneidet */
+  .image-pair-block * {
+    max-height: none !important;
+  }
+
+  .image-pair-text {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  .single-image-block {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  /* ================= ABOUT ================= */
+  .about-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ================= SLIDER ================= */
+  .slider-container {
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 2rem !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .feature-tile {
+    height: auto !important;
     padding: 2rem !important;
-    margin: 2rem auto !important;
+  }
+
+  .feature-tile-text h3 {
+    font-size: 2rem !important;
+  }
+
+  /* ================= FOOTER ================= */
+  .site-footer {
+    margin-top: 4rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .footer-content {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* ================= SPACING ================= */
+  section {
+    margin-bottom: 3rem !important;
   }
 
 }
