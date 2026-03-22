@@ -998,12 +998,13 @@ img {
     color: #fff !important;
   }
 
+  /* 🔥 FIX: NICHT mehr weiß global */
   .hero-title2 {
     color: var(--contessa-dark-01) !important;
   }
 
   /* ================= NAV ================= */
-  .main-nav {
+ .main-nav {
     gap: 0.8rem !important;
     padding: 1rem !important;
     flex-wrap: wrap !important;
@@ -1014,7 +1015,6 @@ img {
     font-size: 0.95rem !important;
     padding: 0.5rem 0.8rem !important;
   }
-
   /* 🔥 Dropdown Mobile Fix (immer sichtbar) */
   .dropdown {
     display: flex !important;
@@ -1058,32 +1058,30 @@ img {
   }
 
   /* ================= IMAGES ================= */
-  /* Intro Image */
+
+  /* 🔥 FIX: Intro Image FINAL */
   .intro-image {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: block !important;
     width: 100% !important;
-    min-height: 300px !important;
-    padding: 2rem !important;
+    min-height: 350px !important;
+
     background: url('../bilder/rot1.png') center/cover no-repeat !important;
   }
 
   .intro-image img {
     width: 100% !important;
     height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
   }
 
-  /* Image-Pair Fix */
+  /* 🔥 FINAL IMAGE PAIR FIX */
   .image-pair-block {
     display: flex !important;
     flex-direction: column !important;
     gap: 2rem !important;
+
     height: auto !important;
     overflow: visible !important;
-    padding: 2rem !important;
+    padding-bottom: 6rem !important;
   }
 
   .image-pair-content {
@@ -1093,8 +1091,10 @@ img {
   .pair-img {
     width: 100% !important;
     height: auto !important;
+
     object-fit: contain !important;
     max-height: none !important;
+
     flex-shrink: 0 !important;
   }
 
