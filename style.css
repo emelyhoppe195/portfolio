@@ -1341,3 +1341,27 @@ img {
     flex-direction: column !important;
   }
 }
+
+@media (max-width: 1400px) {
+  .hero-content {
+    justify-content: center !important;
+    padding: 0 5% !important;
+  }
+
+  .hero-text {
+    margin: 0 !important;
+    max-width: 90% !important;
+    text-align: center !important;
+  }
+
+  .hero-title,
+  .hero-title2 {
+    font-size: clamp(3rem, 6vw, 5rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.5rem) !important;
+    margin-bottom: 1rem !important;
+  }
+}
