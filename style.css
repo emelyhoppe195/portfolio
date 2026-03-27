@@ -1365,3 +1365,42 @@ img {
     margin-bottom: 1rem !important;
   }
 }
+
+
+@media (min-width: 769px) and (max-width: 1400px) {
+  /* Hero Texte */
+  .hero-title,
+  .hero-title2 {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    line-height: 1.1 !important;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.3rem) !important;
+  }
+
+  /* Intro / Diptychon Texte */
+  .intro-title {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  }
+  .intro-text p,
+  .recipe-text p,
+  .image-pair-text p,
+  .about-text p,
+  .project-text p,
+  .skill-card h3,
+  .tech-column h4,
+  .feature-tile-text h3,
+  .feature-tile-text p {
+    font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  }
+
+  /* Projekt-Untertitel */
+  .project-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  }
+
+  /* Footer */
+  .footer-content p {
+    font-size: clamp(2rem, 3vw, 3rem) !important;
+  }
+}
