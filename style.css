@@ -1216,73 +1216,107 @@ img {
   }
 
 }
+ @media (max-width: 1200px) {
 
-@media (max-width: 1200px) {
-
-  /* ===== CONTAINER ===== */
-  .hero-content,
-  .project-content,
-  .about-split,
-  .skills-grid,
-  .tech-skills {
-    max-width: 95vw;
-    padding: 0 4%;
+  section,
+  div {
+    height: auto !important;
+    max-height: none !important;
   }
 
-  /* ===== HERO ===== */
-  .hero-text {
-    margin-right: 0; /* wichtig!! */
-    max-width: 100%;
-  }
-
-  .hero-content {
+  .hero,
+  .hero-header {
+    height: auto !important;
+    min-height: 70vh !important;
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
 
-  /* ===== INTRO / SPLIT ===== */
+  .hero-content {
+    justify-content: center !important;
+    padding: 2rem 5%;
+  }
+
+  .hero-text {
+    margin: 0 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-greeting,
+  .hero-name {
+    text-align: center !important;
+  }
+
   .intro-content,
   .recipe-features-content,
   .image-pair-content,
   .project-content,
-  .about-split {
-    grid-template-columns: 1fr;
-    height: auto;
+  .about-split,
+  .feature-tile-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 2rem;
   }
 
-  /* ===== IMAGES FIX ===== */
-  .project-image {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .project-image img {
-    height: auto;
-  }
-
-  .intro-image img,
-  .recipe-image img {
-    max-width: 100%;
-  }
-
-  /* ===== GRID ===== */
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tech-columns {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== SPACING ===== */
   .intro-text,
   .recipe-text,
   .image-pair-text,
-  .project-text {
-    padding: 3rem 6%;
+  .project-text,
+  .about-text {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 2rem 6% !important;
   }
 
-  /* ===== TYPO ===== */
+  .intro-text p,
+  .recipe-text p,
+  .image-pair-text p,
+  .project-text p,
+  .about-text p {
+    max-width: 100% !important;
+  }
+
+  .project-image,
+  .intro-image,
+  .recipe-image,
+  .image-pair-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 2rem 6% !important;
+  }
+
+  .project-image img,
+  .intro-image img,
+  .recipe-image img,
+  .pair-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .intro-content,
+  .image-pair-content,
+  .recipe-features-content {
+    overflow: visible !important;
+  }
+
+  .hero-text {
+    margin-right: 0 !important;
+  }
+
+  .project-image {
+    width: 100% !important;
+  }
+
   .hero-name {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.8rem, 6vw, 4rem);
+  }
+
+  section {
+    margin-bottom: 3rem;
   }
 }
+*/
