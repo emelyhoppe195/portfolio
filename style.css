@@ -1216,30 +1216,45 @@ img {
   }
 
 }
- @media (max-width: 1200px) {
+
+@media (max-width: 1200px) {
+
+  * {
+    max-width: 100% !important;
+  }
 
   section,
   div {
     height: auto !important;
     max-height: none !important;
+    overflow: visible !important;
   }
 
   .hero,
   .hero-header {
     height: auto !important;
-    min-height: 70vh !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 80vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero::before {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .hero-content {
+    display: flex !important;
     justify-content: center !important;
-    padding: 2rem 5%;
+    align-items: center !important;
+    padding: 2rem 5% !important;
+    width: 100% !important;
   }
 
   .hero-text {
     margin: 0 !important;
+    padding: 0 !important;
     max-width: 100% !important;
     text-align: center !important;
   }
@@ -1247,6 +1262,12 @@ img {
   .hero-greeting,
   .hero-name {
     text-align: center !important;
+    width: 100% !important;
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 7vw, 4rem) !important;
+    line-height: 1.1 !important;
   }
 
   .intro-content,
@@ -1257,8 +1278,9 @@ img {
   .feature-tile-content {
     display: flex !important;
     flex-direction: column !important;
+    width: 100% !important;
     height: auto !important;
-    gap: 2rem;
+    gap: 2rem !important;
   }
 
   .intro-text,
@@ -1266,9 +1288,10 @@ img {
   .image-pair-text,
   .project-text,
   .about-text {
-    max-width: 100% !important;
     width: 100% !important;
+    max-width: 100% !important;
     padding: 2rem 6% !important;
+    overflow: visible !important;
   }
 
   .intro-text p,
@@ -1276,6 +1299,7 @@ img {
   .image-pair-text p,
   .project-text p,
   .about-text p {
+    width: 100% !important;
     max-width: 100% !important;
   }
 
@@ -1297,25 +1321,23 @@ img {
     max-height: none !important;
   }
 
-  .intro-content,
-  .image-pair-content,
-  .recipe-features-content {
-    overflow: visible !important;
+  .pair-img {
+    height: auto !important;
   }
 
-  .hero-text {
-    margin-right: 0 !important;
+  .about-image {
+    width: 100% !important;
   }
 
   .project-image {
     width: 100% !important;
   }
 
-  .hero-name {
-    font-size: clamp(2.8rem, 6vw, 4rem);
+  .hero-text {
+    margin-right: 0 !important;
   }
 
-  section {
-    margin-bottom: 3rem;
+  .image-pair-block {
+    flex-direction: column !important;
   }
 }
