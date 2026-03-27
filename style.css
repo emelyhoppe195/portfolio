@@ -1367,87 +1367,74 @@ img {
 }
 
 
+html {
+  font-size: 100%; /* Basisgröße = 16px */
+}
+
+body {
+  font-size: 1rem; /* Basistext */
+  line-height: 1.6;
+}
+
+/* Alle Überschriften dynamisch skalieren */
+h1, h2, h3, h4, h5, h6, p, li, span, a, button {
+  font-size: clamp(0.8rem, 1.5vw, 2rem); /* automatisch schrumpfend */
+  line-height: 1.4;
+}
+
+/* Hero Texte extra skalieren */
+.hero-title, .hero-title2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* Alle Container flexibler machen */
+section, .container, .intro-content, .project-content, .feature-tile-content, .about-split {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Laptop Media Query – noch kleiner für mittlere Bildschirme */
 @media (min-width: 769px) and (max-width: 1400px) {
-  /* Hero Texte & Container */
-  .hero,
-  .hero-header {
-    height: auto !important;
-    min-height: 70vh !important;
-    max-height: 750px !important;
-    align-items: center !important;
-    justify-content: center !important;
+  h1, h2, h3, h4, h5, h6, p, li, span, a, button {
+    font-size: clamp(0.7rem, 1.2vw, 1.8rem);
   }
 
-  .hero-content,
-  .hero-header-text {
-    padding: 2rem 5% !important;
-    max-width: 90% !important;
-    text-align: center !important;
-  }
-
-  .hero-title,
-  .hero-title2 {
-    font-size: clamp(2.5rem, 5vw, 4rem) !important;
-    line-height: 1.1 !important;
+  .hero-title, .hero-title2 {
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.4rem) !important;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
   }
 
-  /* Allgemeine Fließtexte */
-  .intro-text p,
-  .recipe-text p,
-  .image-pair-text p,
-  .about-text p,
-  .project-text p,
-  .skill-card h3,
-  .tech-column h4,
-  .feature-tile-text h3,
-  .feature-tile-text p {
-    font-size: clamp(1rem, 1.8vw, 1.5rem) !important;
-    line-height: 1.6 !important;
+  section, .container, .intro-content, .project-content, .feature-tile-content, .about-split {
+    padding: 0.5rem;
+  }
+}
+
+/* Optional: Mobile extra klein */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6, p, li, span, a, button {
+    font-size: clamp(0.6rem, 2vw, 1.5rem);
   }
 
-  /* Überschriften */
-  .intro-title,
-  .project-subtitle,
-  .feature-tile-text h3,
-  .tech-title {
-    font-size: clamp(2.5rem, 4.5vw, 4rem) !important;
-    line-height: 1.1 !important;
+  .hero-title, .hero-title2 {
+    font-size: clamp(1rem, 5vw, 2rem);
   }
 
-  /* Container-Widths anpassen */
-  .intro-content,
-  .recipe-features-content,
-  .image-pair-content,
-  .feature-tile-content,
-  .about-split,
-  .project-content,
-  .skills-grid,
-  .tech-columns {
-    width: 95% !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2rem !important;
-    height: auto !important;
+  .hero-sub {
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
   }
 
-  /* Padding aller Texte */
-  .intro-text,
-  .recipe-text,
-  .image-pair-text,
-  .about-text,
-  .project-text,
-  .feature-tile-text {
-    padding: 2rem 2% !important;
-    max-width: 100% !important;
-  }
-
-  /* Footer */
-  .footer-content p {
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem) !important;
+  section, .container, .intro-content, .project-content, .feature-tile-content, .about-split {
+    padding: 0.5rem 1rem;
   }
 }
