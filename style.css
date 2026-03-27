@@ -1368,20 +1368,34 @@ img {
 
 
 @media (min-width: 769px) and (max-width: 1400px) {
-  /* Hero Texte */
+  /* Hero Texte & Container */
+  .hero,
+  .hero-header {
+    height: auto !important;
+    min-height: 70vh !important;
+    max-height: 750px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-content,
+  .hero-header-text {
+    padding: 2rem 5% !important;
+    max-width: 90% !important;
+    text-align: center !important;
+  }
+
   .hero-title,
   .hero-title2 {
     font-size: clamp(2.5rem, 5vw, 4rem) !important;
     line-height: 1.1 !important;
   }
+
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.3rem) !important;
+    font-size: clamp(1rem, 2vw, 1.4rem) !important;
   }
 
-  /* Intro / Diptychon Texte */
-  .intro-title {
-    font-size: clamp(2.5rem, 5vw, 4rem) !important;
-  }
+  /* Allgemeine Fließtexte */
   .intro-text p,
   .recipe-text p,
   .image-pair-text p,
@@ -1391,16 +1405,49 @@ img {
   .tech-column h4,
   .feature-tile-text h3,
   .feature-tile-text p {
-    font-size: clamp(1rem, 2vw, 1.5rem) !important;
+    font-size: clamp(1rem, 1.8vw, 1.5rem) !important;
+    line-height: 1.6 !important;
   }
 
-  /* Projekt-Untertitel */
-  .project-subtitle {
-    font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  /* Überschriften */
+  .intro-title,
+  .project-subtitle,
+  .feature-tile-text h3,
+  .tech-title {
+    font-size: clamp(2.5rem, 4.5vw, 4rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Container-Widths anpassen */
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .feature-tile-content,
+  .about-split,
+  .project-content,
+  .skills-grid,
+  .tech-columns {
+    width: 95% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    height: auto !important;
+  }
+
+  /* Padding aller Texte */
+  .intro-text,
+  .recipe-text,
+  .image-pair-text,
+  .about-text,
+  .project-text,
+  .feature-tile-text {
+    padding: 2rem 2% !important;
+    max-width: 100% !important;
   }
 
   /* Footer */
   .footer-content p {
-    font-size: clamp(2rem, 3vw, 3rem) !important;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem) !important;
   }
 }
