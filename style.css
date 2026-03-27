@@ -1216,3 +1216,73 @@ img {
   }
 
 }
+
+@media (max-width: 1200px) {
+
+  /* ===== CONTAINER ===== */
+  .hero-content,
+  .project-content,
+  .about-split,
+  .skills-grid,
+  .tech-skills {
+    max-width: 95vw;
+    padding: 0 4%;
+  }
+
+  /* ===== HERO ===== */
+  .hero-text {
+    margin-right: 0; /* wichtig!! */
+    max-width: 100%;
+  }
+
+  .hero-content {
+    justify-content: center;
+  }
+
+  /* ===== INTRO / SPLIT ===== */
+  .intro-content,
+  .recipe-features-content,
+  .image-pair-content,
+  .project-content,
+  .about-split {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  /* ===== IMAGES FIX ===== */
+  .project-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-image img {
+    height: auto;
+  }
+
+  .intro-image img,
+  .recipe-image img {
+    max-width: 100%;
+  }
+
+  /* ===== GRID ===== */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-columns {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== SPACING ===== */
+  .intro-text,
+  .recipe-text,
+  .image-pair-text,
+  .project-text {
+    padding: 3rem 6%;
+  }
+
+  /* ===== TYPO ===== */
+  .hero-name {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+}
